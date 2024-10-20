@@ -16,4 +16,4 @@
 
 ## Defined in
 
-[src/plugin/index.ts:58](https://github.com/aladdinstudios/react-native-react-bridge/blob/655f877ebb3bf619b210aad74eeb5292e18e24cb/src/plugin/index.ts#L58)
+[src/plugin/index.ts:62](https://github.com/aladdinstudios/react-native-react-bridge/blob/898909b5e203475f41b87ce030a63736af99841d/src/plugin/index.ts#L62)

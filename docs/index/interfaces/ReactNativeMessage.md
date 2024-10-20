@@ -16,7 +16,7 @@
 
 #### Defined in
 
-[src/types.ts:7](https://github.com/aladdinstudios/react-native-react-bridge/blob/655f877ebb3bf619b210aad74eeb5292e18e24cb/src/types.ts#L7)
+[src/types.ts:7](https://github.com/aladdinstudios/react-native-react-bridge/blob/898909b5e203475f41b87ce030a63736af99841d/src/types.ts#L7)
 
 ***
 
@@ -26,4 +26,4 @@
 
 #### Defined in
 
-[src/types.ts:8](https://github.com/aladdinstudios/react-native-react-bridge/blob/655f877ebb3bf619b210aad74eeb5292e18e24cb/src/types.ts#L8)
+[src/types.ts:8](https://github.com/aladdinstudios/react-native-react-bridge/blob/898909b5e203475f41b87ce030a63736af99841d/src/types.ts#L8)

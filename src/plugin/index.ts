@@ -8,7 +8,7 @@ import type { BuildOptions } from "esbuild";
 import { isEntryFile } from "./babel";
 import { RNRBConfig, bundle } from "./bundler";
 import { join } from "path";
-import { writeFile } from "fs/promises";
+import { mkdir, writeFile } from "fs/promises";
 
 const metroTransformer = (() => {
   try {
@@ -41,8 +41,12 @@ export const createTransformer = (
     const isEntry = isEntryFile(src, filename);
     if (isEntry) {
       const res = await bundle(filename, metroOptions, esbuildOptions);
-      // Replace the file extension with .html
-      const htmlEntryPoint = filename.replace(/\.([^./]+)$/, ".html");
+      const filePathParts = filename.replace(/\.([^./]+)$/, ".html").split("/");
+      const entryFileName = filePathParts.pop()!;
+      filePathParts.push("dist");
+      const distDir = filePathParts.join("/");
+      const htmlEntryPoint = join(distDir, entryFileName);
+      await mkdir(distDir, { recursive: true });
       await writeFile(htmlEntryPoint, res);
       return metroTransformer.transform({
         ...args,
