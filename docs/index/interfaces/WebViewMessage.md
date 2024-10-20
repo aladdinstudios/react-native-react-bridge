@@ -16,7 +16,7 @@
 
 #### Defined in
 
-[src/types.ts:2](https://github.com/inokawa/react-native-react-bridge/blob/d26d92078fb33b1c0c8fd4a3ec39d47e56a03c08/src/types.ts#L2)
+[src/types.ts:2](https://github.com/aladdinstudios/react-native-react-bridge/blob/655f877ebb3bf619b210aad74eeb5292e18e24cb/src/types.ts#L2)
 
 ***
 
@@ -26,4 +26,4 @@
 
 #### Defined in
 
-[src/types.ts:3](https://github.com/inokawa/react-native-react-bridge/blob/d26d92078fb33b1c0c8fd4a3ec39d47e56a03c08/src/types.ts#L3)
+[src/types.ts:3](https://github.com/aladdinstudios/react-native-react-bridge/blob/655f877ebb3bf619b210aad74eeb5292e18e24cb/src/types.ts#L3)

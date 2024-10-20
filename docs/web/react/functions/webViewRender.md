@@ -21,4 +21,4 @@ All dependencies are resolved, compressed and stringified into one file
 
 ## Defined in
 
-[src/web/react.ts:18](https://github.com/inokawa/react-native-react-bridge/blob/d26d92078fb33b1c0c8fd4a3ec39d47e56a03c08/src/web/react.ts#L18)
+[src/web/react.ts:18](https://github.com/aladdinstudios/react-native-react-bridge/blob/655f877ebb3bf619b210aad74eeb5292e18e24cb/src/web/react.ts#L18)

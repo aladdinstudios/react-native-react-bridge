@@ -22,4 +22,4 @@ A function to send a message to React Native
 
 ## Defined in
 
-[src/web/core.ts:13](https://github.com/inokawa/react-native-react-bridge/blob/d26d92078fb33b1c0c8fd4a3ec39d47e56a03c08/src/web/core.ts#L13)
+[src/web/core.ts:13](https://github.com/aladdinstudios/react-native-react-bridge/blob/655f877ebb3bf619b210aad74eeb5292e18e24cb/src/web/core.ts#L13)

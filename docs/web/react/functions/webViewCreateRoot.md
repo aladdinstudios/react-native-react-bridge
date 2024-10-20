@@ -18,4 +18,4 @@
 
 ## Defined in
 
-[src/web/react.ts:26](https://github.com/inokawa/react-native-react-bridge/blob/d26d92078fb33b1c0c8fd4a3ec39d47e56a03c08/src/web/react.ts#L26)
+[src/web/react.ts:26](https://github.com/aladdinstudios/react-native-react-bridge/blob/655f877ebb3bf619b210aad74eeb5292e18e24cb/src/web/react.ts#L26)

@@ -6,7 +6,7 @@
 
 import type { BuildOptions } from "esbuild";
 import { isEntryFile } from "./babel";
-import { RNRBConfig, bundle, escape } from "./bundler";
+import { RNRBConfig, bundle } from "./bundler";
 import { join } from "path";
 import { writeFile } from "fs/promises";
 
@@ -41,11 +41,13 @@ export const createTransformer = (
     const isEntry = isEntryFile(src, filename);
     if (isEntry) {
       const res = await bundle(filename, metroOptions, esbuildOptions);
-      await writeFile(`${filename}.html`, res);
+      // Replace the file extension with .html
+      const htmlEntryPoint = filename.replace(/\.([^./]+)$/, ".html");
+      await writeFile(htmlEntryPoint, res);
       return metroTransformer.transform({
         ...args,
         src:
-          "export default " + `{uri: "file://${escape(filename)}.html"}` + ";",
+          "export default " + `{ htmlEntryPoint: '${htmlEntryPoint}' }` + ";",
       });
     }
 
