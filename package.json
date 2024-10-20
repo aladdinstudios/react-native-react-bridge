@@ -36,7 +36,7 @@
     "pree2e": "npm run build",
     "e2e": "npx playwright test",
     "typedoc": "typedoc",
-    "prepublishOnly": "npm run typedoc && rimraf lib && npm run build"
+    "prepare": "npm run typedoc && rimraf lib && npm run build"
   },
   "dependencies": {
     "@babel/core": "7.25.2",
