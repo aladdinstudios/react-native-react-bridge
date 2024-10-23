@@ -22,4 +22,4 @@ A hook to subscribe messages from React Native.
 
 ## Defined in
 
-[src/web/react.ts:34](https://github.com/aladdinstudios/react-native-react-bridge/blob/898909b5e203475f41b87ce030a63736af99841d/src/web/react.ts#L34)
+[src/web/react.ts:34](https://github.com/inokawa/react-native-react-bridge/blob/d26d92078fb33b1c0c8fd4a3ec39d47e56a03c08/src/web/react.ts#L34)

@@ -37,6 +37,11 @@ const injectImage = async (path: string, ext: string): Promise<string> => {
   return `data:image/${ext};base64,${src}`;
 };
 
+const injectFont = async (path: string, ext: string): Promise<string> => {
+  const src = await readFile(path, "base64");
+  return `data:font/${ext};charset=utf-8;base64,${src}`;
+};
+
 const injectWasm = async (path: string): Promise<string> => {
   const src = await readFile(path, "utf8");
   const buf = new TextEncoder().encode(src);
@@ -55,7 +60,10 @@ module.exports = (function () {
 export const bundle = async (
   filename: string,
   options: RNRBConfig = {},
-  esbuildOptions: Omit<esbuild.BuildOptions , "write" | "entryPoints" | "alias"> = {},
+  esbuildOptions: Omit<
+    esbuild.BuildOptions,
+    "write" | "entryPoints" | "alias"
+  > = {}
 ): Promise<string> => {
   const alias: Record<string, string> = {};
 
@@ -72,7 +80,7 @@ export const bundle = async (
     alias["react-native"] = "react-native-web";
   }
 
-  const {plugins, ...restOptions} = esbuildOptions;
+  const { plugins, ...restOptions } = esbuildOptions;
 
   const bundled = await esbuild.build({
     entryPoints: [filename],
@@ -134,6 +142,30 @@ export const bundle = async (
               loader: "text",
             };
           });
+          build.onLoad({ filter: /.woff$/ }, async (args) => {
+            return {
+              contents: await injectFont(args.path, "woff"),
+              loader: "text",
+            };
+          });
+          build.onLoad({ filter: /.woff2$/ }, async (args) => {
+            return {
+              contents: await injectFont(args.path, "woff2"),
+              loader: "text",
+            };
+          });
+          build.onLoad({ filter: /.otf$/ }, async (args) => {
+            return {
+              contents: await injectFont(args.path, "otf"),
+              loader: "text",
+            };
+          });
+          build.onLoad({ filter: /.ttf$/ }, async (args) => {
+            return {
+              contents: await injectFont(args.path, "ttf"),
+              loader: "text",
+            };
+          });
           build.onLoad({ filter: /.wasm$/ }, async (args) => {
             return {
               contents: await injectWasm(args.path),
@@ -142,7 +174,7 @@ export const bundle = async (
           });
         },
       },
-      ...(plugins || [])
+      ...(plugins || []),
     ],
     ...restOptions,
   });
